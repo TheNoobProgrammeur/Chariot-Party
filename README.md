@@ -24,7 +24,7 @@ Avant chaque tour, le joueur lance un D6 et avance. Il peut tomber sur 4 types d
 
 - case verte : +3 Charbon
 - case rouge : -3 Charbon
-- case bleue : pas d'effet
+- case bleue : Une question est poser
 - case Jaune : +10 Charbon
 
 Lorsque le joueur passe sur une case où il y a un lingot d'or, il perd 10 Charbon pour 1 d'or.
