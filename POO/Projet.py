@@ -4,6 +4,7 @@
 from interface import *
 from random import randint, random
 from datetime import *
+from tkinter.messagebox import *
 import os
 
 #############################################################
@@ -97,7 +98,30 @@ class CaseBleu(Case):
 		self.couleur = 3
 		
 	def effet(self,joueur):
-		pass	
+		f = open("question\question.txt","r",encoding="utf8").read()
+
+		#print(f)
+
+		questions = f.split("#")
+		questions.pop(0)
+		print(questions)
+
+		nbQuestion = randint(1,1000)%len(questions)
+
+		question = questions[nbQuestion]
+
+		sujet = question.split("|")[0]
+		rep = question.split("|")[1].split("\n")[0]
+
+		repT = askquestion("Question ", sujet)
+
+		print(repT)
+		print(rep)
+		if str(repT) == rep :
+			joueur.charbon += 3
+			showinfo('Resultat', 'Vous avez gagner!')	
+		else :
+			showinfo('Resultat', 'Vous avez perdu!')	
 
 class CaseJaune(Case):
 	def __init__(self):
@@ -268,9 +292,7 @@ class Plateau:
 		
 	
 	def jeu2(self):
-		operations = ["+","-","/","*","**"]
-		nbOp = randint(0,4)
-		operation = operations[nbOp]
+		pass
 		
 	
 ########################################################################		

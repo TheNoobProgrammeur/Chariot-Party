@@ -1,0 +1,3 @@
+# Question : Le Noir est-il une couleur ? |no
+# Question : Paris est la capitale de la france ? |yes
+# Question : La bataille de marinian été en 1515 ? |yes
