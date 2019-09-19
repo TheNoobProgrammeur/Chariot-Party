@@ -1,0 +1,62 @@
+---------- Nouvelle Partie -----------------
+Numero 1 Joueur 1 avec 1 l'ingo d'or et 0 Charbon
+Numero 1 Joueur 2 avec 1 l'ingo d'or et 0 Charbon
+Numero 3 Joueur 3 avec 0 l'ingo d'or et 26 Charbon
+Numero 4 Joueur 0 avec 0 l'ingo d'or et 13 Charbon
+
+
+---------- Nouvelle Partie -----------------
+Numero 1 Joueur 0 avec 2 l'ingo d'or et 10 Charbon
+Numero 2 Joueur 1 avec 1 l'ingo d'or et 16 Charbon
+
+
+---------- Nouvelle Partie -----------------
+Numero 1 Joueur 0 avec 0 l'ingo d'or et 10 Charbon
+
+
+---------- Nouvelle Partie -----------------
+Numero 1 Joueur 0 avec 0 l'ingo d'or et 17 Charbon
+
+
+---------- Nouvelle Partie -----------------
+Numero 1 Joueur 0 avec 1 l'ingo d'or et 13 Charbon
+
+
+---------- Nouvelle Partie -----------------
+Numero 1 Joueur 0 avec 1 l'ingo d'or et 6 Charbon
+
+
+---------- Nouvelle Partie -----------------
+Numero 1 Joueur 3 avec 3 l'ingo d'or et 13 Charbon
+Numero 2 Joueur 1 avec 2 l'ingo d'or et 17 Charbon
+Numero 3 Joueur 0 avec 2 l'ingo d'or et 6 Charbon
+Numero 4 Joueur 2 avec 0 l'ingo d'or et 20 Charbon
+
+
+---------- Nouvelle Partie -----------------
+Numero 1 Joueur 0 avec 0 l'ingo d'or et 14 Charbon
+
+
+---------- Nouvelle Partie -----------------
+Numero 1 Joueur 0 avec 1 l'ingo d'or et 20 Charbon
+
+
+---------- Nouvelle Partie -----------------
+Numero 1 Joueur Alice avec 0 l'ingo d'or et 20 Charbon
+Numero 1 Joueur Antoine avec 0 l'ingo d'or et 20 Charbon
+
+
+---------- Nouvelle Partie -----------------
+Numero 1 Joueur Marie avec 1 l'ingo d'or et 13 Charbon
+Numero 2 Joueur Alice avec 1 l'ingo d'or et 3 Charbon
+Numero 3 Joueur Antoine avec 0 l'ingo d'or et 27 Charbon
+Numero 4 Joueur Louis avec 0 l'ingo d'or et 7 Charbon
+
+
+---------- Nouvelle Partie -----------------
+Numero 1 Joueur yeti avec 0 l'ingo d'or et 10 Charbon
+Numero 1 Joueur Toto avec 0 l'ingo d'or et 10 Charbon
+Numero 1 Joueur Nana avec 0 l'ingo d'or et 10 Charbon
+Numero 4 Joueur TomTom avec 0 l'ingo d'or et 7 Charbon
+
+

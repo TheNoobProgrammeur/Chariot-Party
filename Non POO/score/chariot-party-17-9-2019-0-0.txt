@@ -1,0 +1,4 @@
+Numero 1 Joueur 0 avec 1 l'ingo d'or et 24 Charbon
+Numero 2 Joueur 3 avec 1 l'ingo d'or et 9 Charbon
+Numero 3 Joueur 2 avec 0 l'ingo d'or et 16 Charbon
+Numero 4 Joueur 1 avec 0 l'ingo d'or et 13 Charbon

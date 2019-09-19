@@ -1,0 +1,23 @@
+Numero 1 Joueur 3 avec 1 l'ingo d'or et 6 Charbon
+Numero 2 Joueur 1 avec 0 l'ingo d'or et 25 Charbon
+Numero 3 Joueur 2 avec 0 l'ingo d'or et 22 Charbon
+Numero 4 Joueur 0 avec 0 l'ingo d'or et 13 Charbon
+Numero 1 Joueur 0 avec 1 l'ingo d'or et 15 Charbon
+Numero 2 Joueur 2 avec 1 l'ingo d'or et -3 Charbon
+Numero 3 Joueur 3 avec 0 l'ingo d'or et 13 Charbon
+Numero 4 Joueur 1 avec 0 l'ingo d'or et 10 Charbon
+Numero 1 Joueur 0 avec 0 l'ingo d'or et 1 Charbon
+Numero 2 Joueur 2 avec 0 l'ingo d'or et -2 Charbon
+Numero 3 Joueur 3 avec 0 l'ingo d'or et -17 Charbon
+Numero 4 Joueur 1 avec 0 l'ingo d'or et -11 Charbon
+Numero 1 Joueur 1 avec 2 l'ingo d'or et 2 Charbon
+Numero 2 Joueur 3 avec 1 l'ingo d'or et 21 Charbon
+Numero 3 Joueur 0 avec 1 l'ingo d'or et 9 Charbon
+Numero 4 Joueur 2 avec 0 l'ingo d'or et 16 Charbon
+---------- Nouvelle Partie -----------------
+Numero 1 Joueur 1 avec 1 l'ingo d'or et -3 Charbon
+Numero 2 Joueur 0 avec 0 l'ingo d'or et 10 Charbon
+Numero 3 Joueur 3 avec 0 l'ingo d'or et 4 Charbon
+Numero 4 Joueur 2 avec 0 l'ingo d'or et 7 Charbon
+
+
