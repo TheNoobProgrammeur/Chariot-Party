@@ -23,6 +23,12 @@ class Joueur:
 	def initNom(self,name):
 		self.name = name
 	
+	def retirerCharbon(self,nbCharbon):
+		if self.charbon >= nbCharbon :
+			self.charbon -= nbCharbon
+		else:
+			self.charbon = 0
+	
 	def __lt__(self, joueur):
 		if self.ors < joueur.ors :
 			return True
@@ -68,8 +74,8 @@ class Joueur:
 		
 
 class Case:
-	def __init__(self):
-		self.couleur = 0
+	def __init__(self,id):
+		self.couleur = id
 		
 		def effet(self,joueur):
 			pass
@@ -77,25 +83,24 @@ class Case:
 
 class CaseVert(Case):
 	def __init__(self):
-		self.couleur = 1
+		super().__init__(1)
 		
 	def effet(self,joueur):
 		joueur.charbon += 3
 
 class CaseRogue(Case):
 	def __init__(self):
-		self.couleur = 2
+		super().__init__(2)
 		
 	def effet(self,joueur):
-		if joueur.charbon > 2 :
-			joueur.charbon -= 3
-		else :
-			joueur.charbon = 0
+		
+		joueur.retirerCharbon(3)
+		
 
 
 class CaseBleu(Case):
 	def __init__(self):
-		self.couleur = 3
+		super().__init__(3)
 		
 	def effet(self,joueur):
 		f = open("question\question.txt","r",encoding="utf8").read()
@@ -104,7 +109,7 @@ class CaseBleu(Case):
 
 		questions = f.split("#")
 		questions.pop(0)
-		print(questions)
+		#print(questions)
 
 		nbQuestion = randint(1,1000)%len(questions)
 
@@ -115,21 +120,56 @@ class CaseBleu(Case):
 
 		repT = askquestion("Question ", sujet)
 
-		print(repT)
-		print(rep)
+		#print(repT)
+		#print(rep)
 		if str(repT) == rep :
 			joueur.charbon += 3
 			showinfo('Resultat', 'Vous avez gagner!')	
 		else :
-			showinfo('Resultat', 'Vous avez perdu!')	
+			showinfo('Resultat', 'Vous avez perdu!')
+
+
+			
 
 class CaseJaune(Case):
 	def __init__(self):
-		self.couleur = 4
+		super().__init__(4)
 		
 	def effet(self,joueur):
 		joueur.charbon += 10		
 
+class CaseViolet(Case):
+	def __init__(self):
+		super().__init__(5)
+		
+	def effet(self,joueur):
+		indice = random()
+		if indice <= 0.5 :
+			joueur.charbon += 2
+			message = "Vous avez gagner 2 Charbon"
+		
+		elif indice <= 0.70:
+			joueur.charbon = 0
+			message = "Vous avez Perdu tout vos Charbon"
+			
+		elif indice <= 0.80 :
+			joueur.charbon += 8
+			message = "Vous avez gagner 8 Charbon"
+			
+		elif indice <= 0.95 :
+			joueur.retirerCharbon(12)
+			message = "Vous avez Perdu 12 Charbon"
+			
+		elif indice <= 0.97 :
+			joueur.charbon += 20
+			message = "Vous avez gagner 20 Charbon"
+		
+		else :
+			joueur.charbon *= 2
+			message = "Vous avez doublé vos Charbon"
+			
+		annonce_effet(message)	
+		
 class FabriqueCase:
 	
 	def __init__(self):
@@ -156,6 +196,7 @@ class Plateau:
 		fabric = FabriqueCase()
 		
 		self.plateau = [fabric.create(random()) for x in range(nbCase)]
+		self.plateau[0] = CaseViolet()
 			
 		self.joueurs = [Joueur(x) for x in range(nbJoueurs)]
 		
@@ -198,7 +239,7 @@ class Plateau:
 	def effetOr(self,joueur):
 		if joueur.position == self.gold :
 			if joueur.charbon >= 10 :
-				joueur.charbon -= 10
+				joueur.retirerCharbon(10)
 				joueur.ors += 1
 				self.gold = randint(0,len(self.plateau))
 				self.plateauPlacerGold()	
@@ -273,22 +314,31 @@ class Plateau:
 	
 	def jeu1(self):
 		
-		resJ1 = [ ]
+		resJ1 = []
 		for x in self.joueurs :
 			resJ1.append(affJeu1(x))
-			
-		nbAleratpoire = randint(1,100)
-
-		score = abs(resJ1[0]-nbAleratpoire)
-		wineur = 0
-		for y in range(1,len(resJ1)):
-			if score > abs(resJ1[y]-nbAleratpoire):
-				score = abs(resJ1[y]-nbAleratpoire)
-				wineur = y
-				
-		self.joueurs[wineur].charbon += 10
-		print("Joueur : ",wineur, "Gagne le jeu")
-		affWiner(self.joueurs[wineur])	
+		print(resJ1,' ',[None for x in range(len(self.joueurs))])
+		if resJ1 != [None for x in range(len(self.joueurs))] :
+		
+			for index in range(len(resJ1)) :
+				if resJ1[index] == None :
+					resJ1[index] = -1000
+					
+			nbAleratpoire = randint(1,100)
+			score = abs(resJ1[0]-nbAleratpoire)
+			wineur = 0
+			for y in range(1,len(resJ1)):
+				if score > abs(resJ1[y]-nbAleratpoire):
+					score = abs(resJ1[y]-nbAleratpoire)
+					wineur = y
+					
+			self.joueurs[wineur].charbon += 10
+			print("Joueur : ",wineur, "Gagne le jeu")
+			affWiner(self.joueurs[wineur])
+			Afficher_score(self.joueurs)
+		else :
+			showinfo("Triste","Personne veut jouer ?! :C")
+			exit(0)
 		
 	
 	def jeu2(self):

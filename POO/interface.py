@@ -1,6 +1,7 @@
 import turtle
 import time
 import ctypes 
+from tkinter.messagebox import *
 
 #definit le dossier où sont les images
 dir = "img/"
@@ -22,8 +23,10 @@ blue = dir+"cases/blue.gif"
 screen.addshape(blue)
 yellow = dir+"cases/yellow.gif"
 screen.addshape(yellow)
+purple = dir+"cases/purple.gif"
+screen.addshape(purple)
 
-imagesCases=[green,red,blue,yellow]
+imagesCases=[green,red,blue,yellow,purple]
 
 #Image de l'or
 imageGold = dir+"others/gold.gif"
@@ -212,19 +215,39 @@ def Afficher_score(joueurs):
 	scorJoueur.write(text,font = ("Arial", 15))
 
 def demandeNbJoueurs():
-	return int(turtle.numinput("Nombre de Joueur", "Veuillez saisir un nombre de Joueur 1-4 ", minval = 1, maxval = 4))
+	while True :
+		try :
+			return int(turtle.numinput("Nombre de Joueur", "Veuillez saisir un nombre de Joueur 1-4 ", minval = 1, maxval = 4))
+		except TypeError:
+			repT = showerror("Erreur ", "Vous devez entrer un nombre entre 1 et 4")
 
 def demandeNbTours():
-	return int(turtle.numinput("Nombre de Tour", "Veuillez saisir un nombre de Tour ", minval = 1))
+	while True :
+		try :
+			return int(turtle.numinput("Nombre de Tour", "Veuillez saisir un nombre de Tour ", minval = 1))
+		except TypeError:
+				repT = showerror("Erreur ", "Vous devez entrer un nombre")
 
 def demandeNbCase():
-	nbCase = 2
-	while nbCase%4 != 0 :
-		nbCase = int(turtle.numinput("Nombre de Case", "Veuillez saisir un nombre de Case "))
-	return nbCase
+	while True :
+		try:
+			nbCase = 2
+			nbCase = int(turtle.numinput("Nombre de Case", "Veuillez saisir un nombre de Case ",minval = 4))
+			if nbCase%4 != 0 :
+				repT = showerror("Erreur ", "Vous devez entrer un nombre divisible par 4")
+			else:	
+				return nbCase
+		except TypeError :
+				repT = showerror("Erreur ", "Vous devez entrer un nombre divisible par 4")
 	
 def affJeu1(joueur):
-	return int(turtle.numinput("Joueur N°"+str(joueur.name), "Veuillez saisir un nombre entre 1 et 100 ", minval = 1, maxval = 100))
+
+	try :
+		return int(turtle.numinput("Joueur N°"+str(joueur.name), "Veuillez saisir un nombre entre 1 et 100 ", minval = 1, maxval = 100))
+	except TypeError :
+			repT = showerror("Erreur ", "Vous voulez pas jouer ? oki -3 Charbon :) ")
+			joueur.retirerCharbon(3)
+			
 	
 
 
@@ -239,6 +262,9 @@ def annonce_score(joueurs):
 	for joueur in joueurs :
 		message += joueur.afficherScore()+"\n"
 	Mbox('Tableau Final ', message, 1)
+
+def annonce_effet(message):
+	Mbox('Effet de la case Violette ', message, 1)
 	
 def newPartie():
 	return int(turtle.numinput("Nouvelle Partie ? ", "1 : nouvelle partie \n2 : relancer \n0 : Quiter ", minval = 0, maxval = 2))
